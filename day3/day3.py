@@ -1,5 +1,5 @@
 def step1():
-    file = open("input.txt")
+    file = open("testinput.txt")
     input = file.readlines()
     file.close()
     
@@ -15,7 +15,7 @@ def step1():
     print("Valid triangles: {}".format(count))
         
 def step2():
-    file = open("input.txt")
+    file = open("testinput.txt")
     input = file.read().split("\n")
     file.close()
     

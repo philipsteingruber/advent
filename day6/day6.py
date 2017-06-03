@@ -1,7 +1,7 @@
 from operator import itemgetter
 
 def main():
-    with open("input.txt") as file:
+    with open("testinput.txt") as file:
         input = file.read().split("\n")
 
     repetition_message = []

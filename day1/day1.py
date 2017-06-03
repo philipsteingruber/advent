@@ -1,5 +1,5 @@
 def main():
-    file = open("input.txt")
+    file = open("testinput.txt")
     input = file.read().split(", ")
     file.close()
     

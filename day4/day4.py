@@ -5,7 +5,7 @@ from string import ascii_lowercase as lower_letters
 
 
 def main():
-    file = open("input.txt")
+    file = open("testinput.txt")
     inputdata = file.read().split("\n")
     # inputdata = "a-b-c-d-e-f-g-h-987[abcde]"
     file.close()

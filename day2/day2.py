@@ -1,5 +1,5 @@
 def step1():
-    file = open("input.txt")
+    file = open("testinput.txt")
     input = file.read().split()
     file.close()
     
@@ -39,7 +39,7 @@ def step1():
     print("Keycode is: {}".format("".join(key_presses)))
     
 def step2():
-    file = open("input.txt")
+    file = open("testinput.txt")
     input = file.read().split()
     file.close()
     

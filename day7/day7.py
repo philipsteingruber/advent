@@ -1,7 +1,8 @@
 import regex as re
 
+
 def main():
-    with open("input.txt") as file:
+    with open("testinput.txt") as file:
         input = file.read().split()
 
     count_tls = count_ssl = 0
@@ -27,6 +28,7 @@ def has_abba(s):
     else:
         return False
 
+
 def has_aba(s):
     matches = re.findall(r"((?P<first>\w)(?P<second>\w))(?P=first)", s, overlapped=True)
     final_matches = []
@@ -39,7 +41,6 @@ def has_aba(s):
         return final_matches
     else:
         return None
-
 
 
 def is_ssl(outs, ins):
