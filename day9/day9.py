@@ -1,20 +1,32 @@
 def main():
-    with open("input.txt") as file:
-        input = file.read().split()
+    # with open("input.txt") as file:
+    with open("testinput.txt") as file:
+        input = file.read()
 
-    for line in input:
-        res = []
-        for i in range(len(line)):
-            char = line[i]
-            if char != "(":
-                res.append(char)
-            else:
-                decompressed = []
-                for j in range(i, len(line)):
-                    end_char = line[j]
-                    if end_char = ")":
-                        marker = char[i+1:j]
-                        print(marker)
+    res = []
+    i = 0
+    while i in range(len(input)):
+        char = input[i]
+        if char != "(":
+            res.append(char)
+        else:
+            decompressed = []
+            for j in range(i, len(input)):
+                end_char = input[j]
+                if end_char == ")":
+                    marker = input[i+1:j]
+                    print("i: {}, j: {}".format(i, j))
+                    print("input[i]: {}".format(input[i]))
+                    print("input[j]: {}".format(input[j]))
+                    # print(marker)
+                    num, reps = map(int, marker.split("x"))
+                    res.extend(input[j+1:j+num+1] * (reps - 1))
+                    i += num + len(marker)
+                    break
+        i += 1
+    res = "".join(res)
+    print("Decompressed line is {}.".format(res))
+    print("Length is {}.".format(len(res)))
 
 if __name__ == "__main__":
     main()
