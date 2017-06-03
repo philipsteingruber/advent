@@ -1,10 +1,11 @@
 from operator import itemgetter
 
-def step1():
+def main():
     with open("input.txt") as file:
         input = file.read().split("\n")
 
-    message = []
+    repetition_message = []
+    mod_repetition_message = []
     for i in range(len(input[0])):
         letter_counts = {}
         for line in input:
@@ -14,9 +15,11 @@ def step1():
                 letter_counts[line[i]] = 1
 
         sorted_letters = sorted(letter_counts.items(), key=itemgetter(1))[::-1]
-        message.append(sorted_letters[0][0])
+        repetition_message.append(sorted_letters[0][0])
+        mod_repetition_message.append(sorted_letters[len(sorted_letters)-1][0])
 
-    print("".join(message))
+    print("Repetition message: {}".format("".join(repetition_message)))
+    print("Modified repetition message: {}".format("".join(mod_repetition_message)))
 
 if __name__ == "__main__":
-    step1()
+    main()
