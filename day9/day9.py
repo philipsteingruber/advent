@@ -1,5 +1,6 @@
 import re
 
+
 def _step1(s):
         res = 0
         while "(" in s:
@@ -11,7 +12,8 @@ def _step1(s):
             s = s[int(num_to_repeat):]
         res += len(s)
         return res
-        
+
+
 def decompress(s, step2=False):
     marker = re.search(r"\((\d+)x(\d+)\)", s)
     if not marker:
@@ -26,7 +28,6 @@ def decompress(s, step2=False):
         return len(s[:pre_marker]) + decompress(s[i:i+len_to_repeat], True) * reps + decompress(s[i+len_to_repeat:], True)
 
     
-
 if __name__ == "__main__":
     with open("input.txt") as file:
         inputdata = file.read().strip()
