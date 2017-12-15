@@ -42,13 +42,6 @@ def fix_groups(groups):
             fixed_groups.append(group)
     return fixed_groups
 
-# def new_group(visited_programs, existing_groups):
-#     for program in visited_programs:
-#         for group in existing_groups:
-#             if program in group:
-#                 return False
-#     return True
-
 def connected_to_zero(program, programs_dict, visited_programs):
     visited_programs.append(program)
     if program == 0:
